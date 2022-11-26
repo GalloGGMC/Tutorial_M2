@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindromo</title>
+</head>
+<body><h1>Palíndromo</h1>
+    <script>
+        function checkStg(){
+            let a = document.getElementById("num").value;
+            let inv = a.split("").reverse().join("");
+            let sa;
+            if (a == inv){
+                sa = "É palíndromo"
+            } else {
+                sa = "Não é palíndromo"
+            }
+            document.getElementById("saida").innerHTML = sa;
+        }
+    </script>
+    <form>
+        Número: <input type="number" id="num"> <input type="button" value="Checar" onclick="checkStg()">
+    </form><br>
+    <div id="saida"></div>
+</body>
+</html>

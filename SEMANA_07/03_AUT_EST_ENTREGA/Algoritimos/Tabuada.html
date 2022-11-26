@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body><h1>Tabuada</h1>
+    <script>
+        function tabuada(){
+            let base = Number(document.getElementById("base").value);
+            let ini = Number(document.getElementById("ini").value);
+            let fin = Number(document.getElementById("fin").value);
+            let saida = ""
+            for(var i = ini; i <= fin; i++){
+                saida += `${base} x ${i} = ${base * i} ` + '<br>';
+            }
+        document.getElementById("saida").innerHTML = saida;
+        }
+    </script>
+    <form>
+        Tabuada do <input type="number" id="base">, do <input type="number" id="ini"> ao <input type="number" id="fin">
+        <input type="button" value="Calcular" onclick="tabuada()">
+    </form><br>
+    <div id="saida"></div>
+</body>
+</html>

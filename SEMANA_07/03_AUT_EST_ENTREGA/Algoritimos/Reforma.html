@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reforma</title>
+</head>
+<body><h1>Reforma</h1>
+    <script>
+        function calc(){
+            let tam = Number(document.getElementById("tam").value);
+            let h = Number(document.getElementById("h").value) * 100;
+            let b = Number(document.getElementById("b").value) * 100;
+            let saida
+            let a = h * b;
+            tam = tam * tam
+            saida = Math.ceil(a/tam)
+            saida = `${Math.ceil(saida*1.05)} azulejos`
+            document.getElementById("saida").innerHTML = saida
+        }
+    </script>
+    <form>
+        Tamanho do azulejo: <input type="number" id="tam">cm <br>
+        Altura da parede: <input type='number' id='h'>m <br>
+        Largura da parede: <input type="number" id="b">m <br>
+        <input type="button" value="Calcular" onclick="calc()">
+    </form><br>
+    <div id="saida"></div>
+</body>
+</html>
