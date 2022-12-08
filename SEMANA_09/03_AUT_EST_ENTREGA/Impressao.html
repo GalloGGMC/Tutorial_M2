@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressão</title>
+</head>
+<body><h1>Impressão</h1>
+    <style>
+        #white{
+            color: white;
+        }
+    </style>
+    <script>
+        function imp(){
+            let te = document.getElementById("te").value.split("");
+            let re = "";
+            let l = te.length;
+            let br = "<label id='white'>_</label>";
+            for(let i = 0; i < l; i++){
+                re += `${br.repeat(i)}${te[i]}` + "<br>"; 
+            };
+            document.getElementById("re").innerHTML = re;
+        }
+    </script>
+    <form>
+        Frase: <input type="text" id="te">
+        <input type="button" value="Imprimir" onclick="imp()">
+    </form>
+    <br><br><br>
+    <div id="re"></div>
+</body>
+</html>

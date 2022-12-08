@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendimento</title>
+</head>
+<body><h1>Rendimento</h1>
+    <script>
+        function futuro(){
+            let va = Number(document.getElementById("va").value);
+            let t = Number(document.getElementById("t").value);
+            let i = Number(document.getElementById("i").value)/100;
+            let re = va*(Math.pow((1 + i) , t));
+            document.getElementById("re").innerHTML = re;
+        }
+        function presente(){
+            let va = Number(document.getElementById("va").value);
+            let t = Number(document.getElementById("t").value);
+            let i = Number(document.getElementById("i").value)/100;
+            let re = va/(Math.pow((1 + i) , t));
+            document.getElementById("re").innerHTML = re;
+        }
+    </script>
+    <form>
+        Valor: R$<input type="number" id="va"> | Tempo: <input type="number" id="t"> meses | Taxa: <input type="number" id="i">%<br><br>
+        O que você quer calcular? <input type="button" value="Valor futuro" onclick="futuro()">  <input type="button" value="Valor presente" onclick="presente()">
+    </form>
+    <br><br><br>
+    Resultado: R$<label id="re"></label>
+</body>
+</html>

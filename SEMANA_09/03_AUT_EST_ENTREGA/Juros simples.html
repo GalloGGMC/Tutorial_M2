@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juros simples</title>
+</head>
+<body><h1>Juros simples</h1>
+    <script>
+        function juros(){
+            let va = Number(document.getElementById("va").value);
+            let t = Number(document.getElementById("t").value);
+            let i = Number(document.getElementById("i").value)/100;
+            let ju = va*t*i;
+            let mo = va + ju;
+            document.getElementById("mo").innerHTML = mo;
+            document.getElementById("ju").innerHTML = ju;
+        }
+    </script>
+    <form>
+        Capital: R$<input type="number" id="va"> | Período: <input type="number" id="t"> meses | Taxa: <input type="number" id="i">%<br><br>
+        <input type="button" value="Calcular" onclick="juros()">
+    </form>
+    <br><br><br>
+    Juros: R$<label id="ju"></label><br>Montante: R$<label id="mo"></label>
+</body>
+</html>
