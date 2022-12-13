@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/ajax.js"></script>
+    <title>Atualizar realização</title>
+</head>
+<body>
+    <script>
+        let url = new URL(window.location.href);
+        let params = url.searchParams;
+        url = '/atualizaRea/?realizacao='+url.searchParams.get("realizacao");
+
+        fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let usuarios = data;
+
+            usuarios.map(function(usuario) {
+                document.getElementById('realizacao').value = usuario.realizacao;
+                document.getElementById('nome').value = usuario.nome_da_realizacao;
+                document.getElementById('ano').value = usuario.anos;
+                document.getElementById('cargo').value = usuario.cargo;
+                document.getElementById('descricao').value = usuario.descricao;
+            });
+            alert(response.json());
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    </script>
+    <h1>Atualize a realização</h1>
+    <form name="dunno" id="dunno" method="post" action="/atualizaRea">
+        Nome da realização: <input type="text" name="nome" id="nome"><br>
+        Ano: <input type="text" name="ano" id="ano"><br>
+        Cargo: <input type="text" name="cargo" id="cargo"><br>
+        Descrição: <input type="text" name="descricao" id="descricao"><br>
+        <input type="text" name="realizacao" id="realizacao" hidden value="">
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
